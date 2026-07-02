@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fault-Tolerant Embedded Runtime System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="hero">
+  <nav class="navbar">
+    <h2>🛡 Fault-Tolerant Runtime</h2>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#features">Features</a>
+      <a href="#modes">Modes</a>
+      <a href="#simulation">Simulation</a>
+      <a href="https://github.com/bikash-cloud/Fault-Tolerant-Embedded-Runtime-System" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="hero-content">
+    <span class="tag">ESP32 • Runtime Safety • Fault Isolation</span>
+    <h1>Fault-Tolerant Embedded Runtime System</h1>
+    <p>
+      An ESP32-based runtime subsystem that detects hardware and software failures,
+      isolates faulty modules, maintains timestamped fault logs, and transitions
+      between NORMAL, DEGRADED, FAILSAFE, and SHUTDOWN modes.
+    </p>
+
+    <div class="buttons">
+      <a href="https://wokwi.com/projects/468414981553584129" target="_blank">Open Wokwi Simulation</a>
+      <a href="https://github.com/bikash-cloud/Fault-Tolerant-Embedded-Runtime-System" target="_blank">View Source Code</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="overview">
+  <h2>Project Overview</h2>
+  <p>
+    This project implements a fault-tolerant embedded runtime system capable of
+    detecting sensor disconnection, invalid ADC readings, frozen ADC conditions,
+    and relay mismatch faults. The controller autonomously isolates faulty modules
+    while allowing healthy modules to continue operating.
+  </p>
+</section>
+
+<section class="section dark" id="features">
+  <h2>Key Features</h2>
+  <div class="grid">
+    <div class="card">Sensor Disconnection Detection</div>
+    <div class="card">Invalid Reading Detection</div>
+    <div class="card">Frozen ADC Detection</div>
+    <div class="card">Relay Mismatch Detection</div>
+    <div class="card">Fault Isolation</div>
+    <div class="card">Timestamped Fault Logs</div>
+    <div class="card">Structured Recovery</div>
+    <div class="card">LCD Runtime Dashboard</div>
+    <div class="card">Serial Diagnostics</div>
+    <div class="card">Buzzer Alert</div>
+    <div class="card">Relay Protection</div>
+    <div class="card">millis() Scheduler</div>
+  </div>
+</section>
+
+<section class="section" id="modes">
+  <h2>Runtime Modes</h2>
+  <div class="status-box">
+    <span>NORMAL</span>
+    <span>DEGRADED</span>
+    <span>FAILSAFE</span>
+    <span>SHUTDOWN</span>
+  </div>
+</section>
+
+<section class="section dark">
+  <h2>System Architecture</h2>
+  <div class="architecture">
+    <div>4 Sensors<br><small>Potentiometers</small></div>
+    <div>ESP32 ADC<br><small>Runtime Input</small></div>
+    <div>Fault Detector<br><small>Diagnostics</small></div>
+    <div>Runtime Manager<br><small>Mode Control</small></div>
+    <div>Fault Logger<br><small>Timestamped Logs</small></div>
+    <div>Relay + Buzzer<br><small>Safety Output</small></div>
+    <div>LCD + Serial<br><small>Status Interface</small></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Fault Detection Engine</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Sensor Disconnect</h3>
+      <p>Detects ADC values near 0V or full-scale voltage.</p>
+    </div>
+    <div class="card">
+      <h3>Invalid Reading</h3>
+      <p>Detects readings outside valid operating voltage range.</p>
+    </div>
+    <div class="card">
+      <h3>Frozen ADC</h3>
+      <p>Detects ADC values stuck for a long period.</p>
+    </div>
+    <div class="card">
+      <h3>Relay Mismatch</h3>
+      <p>Compares relay command and feedback state.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <h2>Sample LCD Output</h2>
+  <pre>
+MODE:NORMAL
+R:ON S:4/4
+  </pre>
+
+  <pre>
+MODE:FAILSAFE
+R:OFF S:1/4
+  </pre>
+
+  <pre>
+MODE:SHUTDOWN
+R:OFF S:0/4
+  </pre>
+</section>
+
+<section class="section">
+  <h2>Sample Serial Fault Log</h2>
+  <pre>
+FAULT TOLERANT RUNTIME SYSTEM
+
+Runtime Mode   : FAILSAFE
+Relay Command  : OFF
+Relay Feedback : OFF
+Healthy Sensors: 1/4
+
+Fault Logs:
+#1 Time:10s Fault:DISCONNECT Module:2
+#2 Time:12s Fault:INVALID Module:3
+#3 Time:18s Fault:FROZEN_ADC Module:4
+  </pre>
+</section>
+
+<section class="section dark" id="simulation">
+  <h2>Live Simulation</h2>
+  <p>
+    Test the fault-tolerant runtime in Wokwi by changing potentiometer values
+    to simulate sensor failures and runtime mode transitions.
+  </p>
+  <a class="main-btn" href="https://wokwi.com/projects/468414981553584129" target="_blank">
+    Open Wokwi Simulation
+  </a>
+</section>
+
+<section class="section">
+  <h2>Technologies Used</h2>
+  <div class="grid">
+    <div class="card">ESP32</div>
+    <div class="card">Arduino C++</div>
+    <div class="card">Wokwi Simulator</div>
+    <div class="card">I2C LCD</div>
+    <div class="card">Relay Module</div>
+    <div class="card">Active Buzzer</div>
+    <div class="card">GitHub</div>
+    <div class="card">GitHub Pages</div>
+  </div>
+</section>
+
+<section class="section dark">
+  <h2>Project Links</h2>
+  <div class="buttons">
+    <a href="https://wokwi.com/projects/468414981553584129" target="_blank">🔬 Wokwi Simulation</a>
+    <a href="https://github.com/bikash-cloud/Fault-Tolerant-Embedded-Runtime-System" target="_blank">💻 GitHub Repository</a>
+  </div>
+</section>
+
+<section class="connect">
+  <h2>Connect With Me</h2>
+  <div class="connect-links">
+    <a href="https://www.linkedin.com/in/bikash-swain-b75961322" target="_blank">💼 LinkedIn</a>
+    <a href="https://github.com/bikash-cloud" target="_blank">💻 GitHub</a>
+    <a href="mailto:swainbikash524@gmail.com">📧 Email</a>
+  </div>
+</section>
+
+<footer>
+  <h2>Fault-Tolerant Embedded Runtime System</h2>
+  <p>Designed & Developed by <strong>BIKASH SWAIN</strong></p>
+  <p>B.Tech — Electronics & Communication Engineering</p>
+  <p>Embedded Systems • ESP32 • STM32 • IoT • Automotive Runtime Safety</p>
+  <p style="margin-top:20px;">© 2026 BIKASH SWAIN. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
